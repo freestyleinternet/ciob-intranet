@@ -1,0 +1,36 @@
+nav {
+	width:100%;
+	background:$shade;
+	margin-bottom:em(24);
+	ul {
+		list-style-type:none;
+		padding:0;
+		margin:0;
+		li {
+			float:left;
+			a {
+				display:block;
+				color:#000;
+				font-size:em(15);
+				font-weight:600;
+				text-align:center;
+				padding:em(10) em(8) em(10) em(8);
+				text-decoration:none;
+				@include transition (background 0.2s linear);
+				&:hover {
+					color:#fff;
+					background:$brand-second;
+				}
+			}
+			span {
+			}
+			&.current_page_item a {
+				color:#fff;
+				background:$brand-second;
+			}
+			&.separator {
+				line-height:40px;
+			}
+		}
+	}
+}

@@ -1,0 +1,21 @@
+// Font Face
+// @include fontface('FONT_NAME', 'assets/fonts/', 'FONT_FAMILY');
+
+// Structure
+$pageWidth: 940px;
+
+// Text Selection
+$selectionColor: orange;
+
+// Links
+$linkColor: red;
+$linkHoverColor: blue;
+
+// Other
+$brand-dark: #4f2d5b;
+$brand-second:#f9a435;
+$shade:#F6F6F6;
+
+// Path to images
+// Use #{$assetPath}/
+$assetPath : "assets/images";

@@ -1,0 +1,36 @@
+/*!
+Theme Name: CIOB Intranet
+Theme URI: http://www.freestyleinternet.co.uk
+Description: Freestyle Custom Theme Build
+Author: Annemarie Parsons
+Author URI: http://www.freestyleinternet.co.uk
+Version: 1.0
+*/
+
+// Compass imports
+@import "compass";
+
+// Bourbon
+@import "bourbon/bourbon";
+
+// Reset, Variables, Mixins, Etc
+// DO NOT EDIT ORDER OF FILES
+@import "partials/mixins";
+@import "partials/variables";
+@import "partials/normalize";
+
+// Globals
+@import "partials/global";
+
+// Page and Site Styles
+@import "partials/page";
+@import "partials/navigation";
+@import "partials/posts";
+@import "partials/widgets";
+@import "partials/search";
+@import "partials/comments";
+@import "partials/forms";
+
+// Helper Classes, Media Queries, Print, Etc
+@import "partials/helpers";
+@import "partials/print";
