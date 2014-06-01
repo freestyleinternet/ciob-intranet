@@ -4,17 +4,20 @@
 // Structure
 $pageWidth: 940px;
 
-// Text Selection
-$selectionColor: orange;
-
-// Links
-$linkColor: red;
-$linkHoverColor: blue;
-
 // Other
 $brand-dark: #4f2d5b;
 $brand-second:#f9a435;
 $shade:#F6F6F6;
+$darkshade:#3B3B3B;
+
+// Text Selection
+$selectionColor: orange;
+
+// Links
+$linkColor:$brand-second;
+$linkHoverColor:$brand-second;
+
+
 
 // Path to images
 // Use #{$assetPath}/

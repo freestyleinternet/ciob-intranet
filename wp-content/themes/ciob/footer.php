@@ -1,6 +1,25 @@
 		<footer>
-			<?php dynamic_sidebar( 'Footer' ); ?>
-			<p>&copy; <?php echo date( "Y" ); echo " "; bloginfo( 'name' ); ?></p>
+        	<div class="wrapper">
+            	<div class="col">
+                	<p>&copy; CIOB <?php echo date( "Y" ); ?></p>
+              </div>
+              <div class="col">
+                <ul>
+                  <li><a href="#">sadsfd</a></li>
+                  <li><a href="#">sadsa</a></li>
+                  <li><a href="#">gdfgdf</a></li>
+                  <li><a href="#">ddfgfd</a></li>
+                </ul>
+              </div>
+              <div class="col">
+                <ul>
+                  <li><a href="#">sadsfd</a></li>
+                  <li><a href="#">sadsa</a></li>
+                  <li><a href="#">gdfgdf</a></li>
+                  <li><a href="#">ddfgfd</a></li>
+                </ul>
+              </div>
+           </div> 
 		</footer>
 
 

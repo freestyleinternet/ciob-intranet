@@ -1,7 +1,6 @@
 nav {
 	width:100%;
 	background:$shade;
-	margin-bottom:em(24);
 	ul {
 		list-style-type:none;
 		padding:0;
@@ -33,4 +32,53 @@ nav {
 			}
 		}
 	}
+}
+
+nav li ul li > a:after { 
+	 content:' >';
+} 
+nav li ul li > a:only-child:after { 
+	content: ''; 
+}
+
+nav ul li:hover a {
+	color:#fff;
+	background:$brand-second;
+}
+
+/* Navigation Second Level */
+nav ul li ul {
+	position:absolute;
+	display:none;
+	height:auto;
+	min-width:210px;
+	height: 0;
+	
+}
+nav li:hover > ul {
+	display:block
+}
+nav li li:hover {
+	
+}
+nav li li {
+    position:relative;
+	display:block;
+	float:none;
+}
+nav li ul a {
+	color:#fff;
+	display:block;
+	text-align:left;
+	padding:em(10) em(8) em(10) em(8);
+	background:$brand-second;
+	white-space: nowrap;
+	&:hover {
+		background:#fcb765;
+	}
+}
+nav li li ul {
+	position:absolute;
+    top:0;
+    left:100%;
 }
