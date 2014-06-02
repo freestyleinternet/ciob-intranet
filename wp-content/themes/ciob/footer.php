@@ -4,20 +4,22 @@
                 	<p>&copy; CIOB <?php echo date( "Y" ); ?></p>
               </div>
               <div class="col">
-                <ul>
-                  <li><a href="#">sadsfd</a></li>
-                  <li><a href="#">sadsa</a></li>
-                  <li><a href="#">gdfgdf</a></li>
-                  <li><a href="#">ddfgfd</a></li>
-                </ul>
+                <?php if( have_rows('footer_link_box_1',5) ): ?>
+                  <ul>
+                        <?php while(the_repeater_field('footer_link_box_1',5)): ?>
+                            <li><a href="<?php the_sub_field('link_to_full_url',5); ?>" target="_blank"><?php the_sub_field('add_a_tilte_for_link',5); ?></a></li>
+                      <?php  endwhile;  ?>
+                  </ul>
+					<?php endif; ?>
               </div>
               <div class="col">
-                <ul>
-                  <li><a href="#">sadsfd</a></li>
-                  <li><a href="#">sadsa</a></li>
-                  <li><a href="#">gdfgdf</a></li>
-                  <li><a href="#">ddfgfd</a></li>
-                </ul>
+                <?php if( have_rows('footer_link_box_2',5) ): ?>
+                  <ul>
+                        <?php while(the_repeater_field('footer_link_box_2',5)): ?>
+                            <li><a href="<?php the_sub_field('add_the_full_url_here',5); ?>" target="_blank"><?php the_sub_field('add_text_for_the_link',5); ?></a></li>
+                      <?php  endwhile;  ?>
+                  </ul>
+					<?php endif; ?>
               </div>
            </div> 
 		</footer>

@@ -23,9 +23,26 @@ add_action( 'tgmpa_register', 'register_required_plugins' );
 Misc Theme Functions
 *****************************************/
 
+/**
+ * Allow SVG file upload in Wordpress Admin area
+ */
+function cc_mime_types( $mimes ){
+	$mimes['svg'] = 'image/svg+xml';
+	return $mimes;
+}
+add_filter( 'upload_mimes', 'cc_mime_types' );
 
 /**
- * FAdd separator for menu items
+ * Add custom image sizes
+ */
+function custom_image_sizes() {
+    add_theme_support('post-thumbnails');
+	add_image_size('logo', 206, 90, TRUE);
+}
+add_action('after_setup_theme', 'custom_image_sizes');
+
+/**
+ * Add separator for menu items
  */
 class Main_Menu_Walker extends Walker_Nav_Menu{
 

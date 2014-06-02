@@ -36,39 +36,31 @@
                 data-cycle-prev="#prev"
                 data-cycle-next="#next">
                 <div class="cycle-pager"></div>   
-                    <div class="slide">
-                    		<h1>EMPLOYEES COMMUNICATION</h1>
-                         <p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
-                         <a class="yellowimg arrow thinner" href="#">Read More...</a>
-                    </div>
-                    <div class="slide">
-                    		<h1>EMPLOYEES COMMUNICATION</h1>
-                         <p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
-                         <a class="yellowimg arrow thinner" href="#">Read More...</a>
-                    </div>
-                    <div class="slide">
-                    		<h1>EMPLOYEES COMMUNICATION</h1>
-                         <p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
-                         <a class="yellowimg arrow thinner" href="#">Read More...</a>
-                    </div>
+					  <?php if( have_rows('add_slide') ): ?>
+                    	<?php while(the_repeater_field('add_slide')): ?>
+                    		<div class="slide">
+                    			<h1><?php the_sub_field('slide_title'); ?></h1>
+                    			<?php the_sub_field('slide_content'); ?>
+                    			<a class="yellowimg arrow thinner" href="<?php the_sub_field('slide_read_more_link'); ?>">Read More...</a>
+                    		</div>
+                    	<?php  endwhile;  ?>
+                    <?php endif; ?>
             	</div>
-                
-            <div class="col-one leftalign noborder">
-              		<h1>CONNECT TO</h1>
-              		<div class="logo-block">
-                    
+				<div class="full-width">    
+                  <div class="col-one leftalign noborder">
+                  	<h1><?php the_field('the_logo_box_title'); ?></h1>
+                  	<?php if( have_rows('logos') ): ?>
+                  		<?php while(the_repeater_field('logos')): ?>
+                              <div class="logo-block">
+                              	<div class="element"><img src="<?php the_sub_field('client_logo'); ?>" alt="<?php the_sub_field('client_name'); ?>"/></div>
+                              </div>
+                  		<?php  endwhile;  ?>
+                  	<?php endif; ?>
+                  </div> 
+                  <div class="col-three noborder">
+                  	<?php the_content(); ?>
                   </div>
-                  <div class="logo-block">
-                    
-                  </div>
-              </div> 
-              
-            <div class="col-three noborder">
-              		<h1>SERVICE DESK</h1>
-              		<p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-              		<a href="#">CALL TO ACTION HERE</a>
-            </div>
-              
+  				</div>             
               <div class="social-feeds">
                 <div class="col4 first">
                 <h4><img src="<?php echo get_bloginfo('template_directory'); ?>/assets/images/icons/twitter-icon.png" width="19" height="16" alt=""/>TWITTER</h4>
@@ -104,15 +96,23 @@
                 </div>
                 <div class="col4">
                   <h4><img src="<?php echo get_bloginfo('template_directory'); ?>/assets/images/icons/facebook-icon.png" width="19" height="16" alt="facebook"/>FACEBOOK</h4>
-                  <p>Are you interested in becoming a CIOB Ambassador? Find out more about the programme here - <a href="#">http://ow.ly/vq5Wt</a></p>
+                  <div id="fb-root"></div>
+                  <script>(function(d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (d.getElementById(id)) return;
+                    js = d.createElement(s); js.id = id;
+                    js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&appId=306982196115534&version=v2.0";
+                    fjs.parentNode.insertBefore(js, fjs);
+                  }(document, 'script', 'facebook-jssdk'));</script>
+                  <div class="fb-comments" data-href="http://example.com/comments" data-width="220" data-numposts="5" data-colorscheme="light"></div>
                 </div>
                 <div class="col4">
                   <h4><img src="<?php echo get_bloginfo('template_directory'); ?>/assets/images/icons/flickr-icon.png" width="27" height="27" alt=""/>FLICKR</h4>
-                  <p>CIOB @theCIOB Apr 13 Find out how construction in the Ukraine is coping in our @globalconreview magazine <a href="#">http://ow.ly/vq5Wt</a>  #ukraine #construction</p>
+                  <img src="<?php echo get_bloginfo('template_directory'); ?>/assets/images/ciob-flicker.jpg" width="209" height="124" alt=""/> 
                 </div>
                 <div class="col4 last">
                   <h4><img src="<?php echo get_bloginfo('template_directory'); ?>/assets/images/icons/youtube.png" width="17" height="17" alt=""/>YOUTUBE</h4>
-                  <p>CIOB @theCIOB Apr 13 Find out how construction in the Ukraine is coping in our @globalconreview magazine <a href="#">http://ow.ly/vq5Wt</a>  #ukraine #construction</p>
+                  <img src="<?php echo get_bloginfo('template_directory'); ?>/assets/images/ciob-youtube.jpg" width="209" height="124" alt=""/> 
                 </div>	
               </div>  
             

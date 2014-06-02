@@ -27,15 +27,42 @@
                 </ul>
 			</aside>
            <section class="main-content" role="main">
-           	<h1>Employee Handbook</h1>
-            	<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-              <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+           	<h1><?php the_title(); ?></h1>
+            	<?php the_content(); ?>
+              
+              <?php if( have_rows('add_download') ): ?>
               <ul class="downloads">
-                <li><a href="#">Title to download PDF<br>(100kb)</a></li>
-                <li><a href="#">Title to download PDF<br>(100kb)</a></li>
-                <li><a href="#">Title to download PDF<br>(100kb)</a></li>
-                <li><a href="#">Title to download PDF<br>(100kb)</a></li>
+              		<?php while(the_repeater_field('add_download')): ?>
+                		<li><a href="<?php the_sub_field('file_to_download'); ?>" target="_blank"><?php the_sub_field('file_name'); ?><br><?php the_sub_field('file_size'); ?></a></li>
+                  <?php  endwhile;  ?>
               </ul>
+              <?php endif; ?>
+
+            
+              
+              <div class="author-container">
+              		<div class="author">
+                    	
+						<?php echo get_avatar( get_the_author_meta( 'user_email' ), 70 ); ?>
+						<div class="v-align">
+						<?php
+                        $fname = get_the_author_meta('first_name');
+                        $lname = get_the_author_meta('last_name');
+                        $full_name = '';
+                        
+                        if( empty($fname)){
+                            $full_name = $lname;
+                        } elseif( empty( $lname )){
+                            $full_name = $fname;
+                        } else {
+                            $full_name = "{$fname} {$lname}";
+                        }
+						?>
+                      <h1>Author: <?php echo $full_name; ?></h1>
+                      <p>Date: <?php the_date('j/m/Y'); ?></p> 
+                      </div> 
+					</div>   
+              </div>
            </section> 
     	</div>
     	<?php endwhile; endif; ?>

@@ -9,9 +9,10 @@ $brand-dark: #4f2d5b;
 $brand-second:#f9a435;
 $shade:#F6F6F6;
 $darkshade:#3B3B3B;
+$body-copy:#3b3b3b;
 
 // Text Selection
-$selectionColor: orange;
+$selectionColor: $brand-dark;
 
 // Links
 $linkColor:$brand-second;
