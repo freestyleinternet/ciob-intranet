@@ -68,12 +68,12 @@
 					require_once('Creare_Twitter.php');
 					
 					$twitter = new Creare_Twitter();
-					$twitter->screen_name = "tweetingfrog";
+					$twitter->screen_name = "theCIOB";
 					$twitter->not = 1;
-					$twitter->consumerkey = "5wt7K6oTOd3ONUQ5yM0w";
-					$twitter->consumersecret = "COsTEDyEGp6iQ1oRdHmxoQ0STvJyMHB8YttBAFZso2s";
-					$twitter->accesstoken = "61147230-D4uaSYuUGdXH2Gg3OruqAxrIbh6TX4VsRHDxvSOf5";
-					$twitter->accesstokensecret = "ijx5oGwqxRqNjnPL23A3rebepyIDWwMKzMeWKKv2DTI0h";
+					$twitter->consumerkey = "vzqphySg7bmzihUk3QjFA";
+					$twitter->consumersecret = "RJiXv0bS0FvNso6liKPKL1ycEQlc2RzEuVVeaO1wCv8";
+					$twitter->accesstoken = "66349240-qam8D4HFGVhRAWRsyyjFlMpSKQwHQzVZ9e9inMjXy";
+					$twitter->accesstokensecret = "irVJVlqqe6uFaWG1R3ku27rCQ973NwtpWu3levZbrmMo8";
 					
 					# cache file
 					$twitter->cachefile = $_SERVER['DOCUMENT_ROOT']."/twitter/twitter.txt";

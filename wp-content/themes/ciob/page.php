@@ -37,10 +37,9 @@
                   <?php  endwhile;  ?>
               </ul>
               <?php endif; ?>
-
-            
-              
-              <div class="author-container">
+				
+				<?php if(in_array('Show', get_field('check_box_to_show_the_page_admin') )): ?>
+               <div class="author-container">
               		<div class="author">
                     	
 						<?php echo get_avatar( get_the_author_meta( 'user_email' ), 70 ); ?>
@@ -63,6 +62,8 @@
                       </div> 
 					</div>   
               </div>
+			<?php endif; ?>
+
            </section> 
     	</div>
     	<?php endwhile; endif; ?>
