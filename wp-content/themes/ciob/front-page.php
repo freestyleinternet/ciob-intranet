@@ -94,27 +94,23 @@
                   <p><?php echo $tweet['tweet']; ?></p>
               		<?php } ?>
                 </div>
-                <div class="col4">
+                <div class="col2">
                   <h4><img src="<?php echo get_bloginfo('template_directory'); ?>/assets/images/icons/facebook-icon.png" width="19" height="16" alt="facebook"/>FACEBOOK</h4>
                   <div id="fb-root"></div>
-                  <script>(function(d, s, id) {
-                    var js, fjs = d.getElementsByTagName(s)[0];
-                    if (d.getElementById(id)) return;
-                    js = d.createElement(s); js.id = id;
-                    js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&appId=306982196115534&version=v2.0";
-                    fjs.parentNode.insertBefore(js, fjs);
-                  }(document, 'script', 'facebook-jssdk'));</script>
-                  <div class="fb-comments" data-href="http://example.com/comments" data-width="220" data-height="220" data-numposts="1" data-colorscheme="light"></div>
-                </div>
-                <div class="col4 flickr">
-                  <h4><img src="<?php echo get_bloginfo('template_directory'); ?>/assets/images/icons/flickr-icon.png" width="27" height="27" alt=""/>FLICKR</h4>
-					<div id="latest-flickr-images"></div>
-                  <!--<img src="<?php echo get_bloginfo('template_directory'); ?>/assets/images/ciob-flicker.jpg" width="209" height="124" alt=""/>
-                  <img src="<?php echo get_bloginfo('template_directory'); ?>/assets/images/ciob-flicker.jpg" width="209" height="124" alt=""/> -->
+					<script>(function(d, s, id) {
+                      var js, fjs = d.getElementsByTagName(s)[0];
+                      if (d.getElementById(id)) return;
+                      js = d.createElement(s); js.id = id;
+                      js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&appId=306982196115534&version=v2.0";
+                      fjs.parentNode.insertBefore(js, fjs);
+                    }(document, 'script', 'facebook-jssdk'));</script>
+                  <div class="fb-post" data-href="https://www.facebook.com/FacebookDevelopers/posts/10151471074398553" data-width="464"></div>
                 </div>
                 <div class="col4 last">
                   <h4><img src="<?php echo get_bloginfo('template_directory'); ?>/assets/images/icons/youtube.png" width="17" height="17" alt=""/>YOUTUBE</h4>
                   <img src="<?php echo get_bloginfo('template_directory'); ?>/assets/images/ciob-youtube.jpg" width="209" height="124" alt=""/> 
+                	<h4 class="second"><img src="<?php echo get_bloginfo('template_directory'); ?>/assets/images/icons/flickr-icon.png" width="27" height="27" alt=""/>FLICKR</h4>
+                	<div id="latest-flickr-images"></div>
                 </div>	
               </div>  
             
