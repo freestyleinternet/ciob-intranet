@@ -1,8 +1,3 @@
-<?php	
-	$rows = get_field('image_options',5); // get all the rows
-	$rand_row = $rows[ array_rand( $rows ) ]; // get a random row
-	$rand_row_image = $rand_row['upload_an_image']; // get the sub field value 
-?>
 <!DOCTYPE html>
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" <?php language_attributes(); ?>> <!--<![endif]-->
@@ -12,18 +7,6 @@
 	<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico" />
     <script type="text/javascript" src="//use.typekit.net/boi5zyt.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-    <style type="text/css">
-	<!--
-	section#main {
-		min-height:707px;
-		padding-top:24px;
-		background-color:#fff;
-		background-position:bottom center;
-		background-repeat:no-repeat;	
-		background-image: url(<?php  echo $rand_row_image; ?>);
-	}
-	-->
-	</style>
 	<?php wp_head(); ?>
 </head>
 

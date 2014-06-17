@@ -7,38 +7,51 @@ function register_required_plugins() {
 
 	$plugins = array(
 
+		// Security
+		array(
+            'name'                     => 'LaunchKey', 
+            'slug'                     => 'launchkey',
+            'required'                 => true,
+            'force_activation'         => true
+        ),
+
+		// SEO
 		array(
 			'name' 				=> 'WordPress SEO by Yoast',
 			'slug' 				=> 'wordpress-seo',
 			'required' 			=> true,
 			'force_activation'	=> true
 		),
-		
-		
-		// This is an example of how to include a plugin from a private repo in your theme.
-        array(
-            'name'               => 'Gravity Forms', // The plugin name.
-            'slug'               => 'gravityforms', // The plugin slug (typically the folder name).
-            'source'             => 'https://s3.amazonaws.com/tgm/tgm-new-media-plugin.zip', // The plugin source.
-            'required'           => true, // If false, the plugin is only 'recommended' instead of required.
-            'external_url'       => 'https://github.com/thomasgriffin/New-Media-Image-Uploader', // If set, overrides default API URL and points to an external URL.
-        ),
-		
-
-		
-		array(
-			'name' 				=> 'ACF Repeater',
-			'slug' 				=> 'acf-repeater',
-			'required' 			=> true,
-			'force_activation'	=> true
-		),
-
 		array(
 			'name' 				=> 'Google Analytics for WordPress',
 			'slug' 				=> 'google-analytics-for-wordpress',
 			'required' 			=> true,
 			'force_activation'	=> true
 		),
+		
+		// Require ACF
+        array(
+            'name'                     => 'Advanced Custom Fields', 
+            'slug'                     => 'advanced-custom-fields', 
+            'required'                 => true, 
+            'force_activation'         => true 
+        ),
+		
+		// Custom login
+		array(
+            'name'                     => 'Custom Login', 
+            'slug'                     => 'custom-login',
+            'required'                 => true,
+            'force_activation'         => true
+        ),
+		
+		// Backup
+		array(
+            'name'                     => 'Akeeba Backup CORE for WordPress', 
+            'slug'                     => 'akeebabackupcore',
+            'required'                 => true,
+            'force_activation'         => true
+        )
 
 	);
 

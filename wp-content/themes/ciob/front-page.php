@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+f<?php get_header(); ?>
 
 	<section id="main" role="main">
 		<div class="container">
@@ -7,7 +7,7 @@
               <div class="col-one">
               		<h2>LATEST</h2>
               		<img src="<?php echo get_bloginfo('template_directory'); ?>/assets/images/video-default.jpg" width="467" height="264" alt=""/>
-              		<figcaption>VIDEO TITLE  – Lorem ipsum dolor sit amet, consectetur adipisicing elit.</figcaption>
+              		
             </div>
               
               <div class="col-two">
