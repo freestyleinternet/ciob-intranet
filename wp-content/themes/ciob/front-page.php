@@ -62,14 +62,14 @@
                   </div>
   				</div>             
               <div class="social-feeds">
-                <div class="col4 first">
+                <div class="col4 twitterfeed first">
                 <h4><img src="<?php echo get_bloginfo('template_directory'); ?>/assets/images/icons/twitter-icon.png" width="19" height="16" alt=""/>TWITTER</h4>
                 <?php
 					require_once('Creare_Twitter.php');
 					
 					$twitter = new Creare_Twitter();
 					$twitter->screen_name = "theCIOB";
-					$twitter->not = 1;
+					$twitter->not = 4;
 					$twitter->consumerkey = "vzqphySg7bmzihUk3QjFA";
 					$twitter->consumersecret = "RJiXv0bS0FvNso6liKPKL1ycEQlc2RzEuVVeaO1wCv8";
 					$twitter->accesstoken = "66349240-qam8D4HFGVhRAWRsyyjFlMpSKQwHQzVZ9e9inMjXy";
@@ -104,11 +104,13 @@
                     js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&appId=306982196115534&version=v2.0";
                     fjs.parentNode.insertBefore(js, fjs);
                   }(document, 'script', 'facebook-jssdk'));</script>
-                  <div class="fb-comments" data-href="http://example.com/comments" data-width="220" data-numposts="5" data-colorscheme="light"></div>
+                  <div class="fb-comments" data-href="http://example.com/comments" data-width="220" data-height="220" data-numposts="1" data-colorscheme="light"></div>
                 </div>
-                <div class="col4">
+                <div class="col4 flickr">
                   <h4><img src="<?php echo get_bloginfo('template_directory'); ?>/assets/images/icons/flickr-icon.png" width="27" height="27" alt=""/>FLICKR</h4>
-                  <img src="<?php echo get_bloginfo('template_directory'); ?>/assets/images/ciob-flicker.jpg" width="209" height="124" alt=""/> 
+					<div id="latest-flickr-images"></div>
+                  <!--<img src="<?php echo get_bloginfo('template_directory'); ?>/assets/images/ciob-flicker.jpg" width="209" height="124" alt=""/>
+                  <img src="<?php echo get_bloginfo('template_directory'); ?>/assets/images/ciob-flicker.jpg" width="209" height="124" alt=""/> -->
                 </div>
                 <div class="col4 last">
                   <h4><img src="<?php echo get_bloginfo('template_directory'); ?>/assets/images/icons/youtube.png" width="17" height="17" alt=""/>YOUTUBE</h4>

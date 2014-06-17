@@ -24,26 +24,31 @@ input {
 		color:#000;
 	}
 }
+.styled-select {
+  float:right;
+	width:225px;
+   height: 26px;
+   overflow: hidden;
+   margin:em(10) 0;
+    line-height:21px;
+   background:$brand-dark url(#{$assetPath}/down-arrow-select.svg) no-repeat right;
+   border: 1px solid #ccc;
+}
 select::-ms-expand {
     display: none;
 }
-select {
-	float:right;
-	min-width:220px;
-    font-weight: normal;
-    line-height:1.2em;
-    margin: 0 0 10px;
-    padding:em(3) em(8);
-    border: 0 none;
-    cursor: pointer;
-    text-indent: 0.01px;
-    text-overflow: "";
-	font-size:em(12);
-    background:$brand-dark url(#{$assetPath}/down-arrow-select.svg) no-repeat right;
-	color:#fff;
-	font-weight:600;
-	border:1px solid #fff;
-	@include appearance(none);
+.styled-select select {
+	 background: transparent;
+   width: 268px;
+   padding:em(0) em(8) em(6) em(8);
+   font-size: 12px;
+  
+   border: 0;
+   border-radius: 0;
+   height:26px;
+   margin:0;
+   color:#fff;
+   -webkit-appearance: none;
 }
 select option {
 	color:#000;

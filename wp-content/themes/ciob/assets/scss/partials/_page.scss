@@ -388,7 +388,7 @@ figcaption {
 		font-size:em(16);
 		font-weight:600;
 		margin:0 0 em(12) 0;
-		min-height:26px;
+		height:27px;
 		img {
 			margin-right:em(14);
 		}
@@ -400,9 +400,21 @@ figcaption {
 			color:$brand-dark;
 		}
 	}
+	#latest-flickr-images {
+		display:block;
+		width:100%;
+		img {
+			width:226px;
+		}
+	}
 }
 
-
+.col4.twitterfeed p {
+	margin:0 0 em(12) 0;
+}
+.col4.flickr img {
+	margin:0 0 em(12) 0;
+}
 
 footer {
 	padding-top:em(24);

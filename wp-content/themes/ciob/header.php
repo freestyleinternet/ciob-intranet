@@ -4,8 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<title><?php wp_title(''); ?></title>
-	<link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/favicon.ico" type="image/x-icon" />
-	<link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/favicon.png" />
+	<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico" />
     <script type="text/javascript" src="//use.typekit.net/boi5zyt.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 	<?php wp_head(); ?>
@@ -18,12 +17,14 @@
 	<div class="topbar">
         <div class="wrapper">
             <a href="<?php bloginfo('url'); ?>"><img src="<?php bloginfo('template_directory'); ?>/assets/images/cibo-logo.svg" alt="CIOB"/></a>	
+            <div class="styled-select">
             <select>
             	  <option>Qucik Links</option>
                 <option>Option 1</option>
                 <option>Option 2</option>
                 <option>Option 3</option>
             </select>
+            </div>
             <?php get_search_form(); ?> 
         </div>
     </div>
