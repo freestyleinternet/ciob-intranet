@@ -7,6 +7,7 @@
 	<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico" />
     <script type="text/javascript" src="//use.typekit.net/boi5zyt.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <script src='http://maps.googleapis.com/maps/api/js?sensor=false' type='text/javascript'></script>
 	<?php wp_head(); ?>
 </head>
 
@@ -33,9 +34,7 @@
     <header>
         <div class="wrapper">
             <h1><a class="logo" href="<?php echo home_url( '/' ); ?>">INTRANET</a></h1>
-            <p class="date">16 June 2014 12:10:45</p>
-            <button>LOG OUT</button>
-			 <p>Saul Townsend is logged in</p>   
+            <p class="date">16 June 2014 12:10:45</p>   
         </div>
     </header>
     

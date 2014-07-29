@@ -1,6 +1,8 @@
 nav {
+	position:relative;
 	width:100%;
 	background:$shade;
+	z-index:9999;
 	ul {
 		list-style-type:none;
 		padding:0;

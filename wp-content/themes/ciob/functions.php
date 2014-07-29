@@ -24,6 +24,24 @@ Misc Theme Functions
 *****************************************/
 
 /**
+ * Truncate the content
+ */
+function truncate($string, $limit, $break=" ", $pad="...")
+{
+	// Remove any formatting first
+	$string = strip_tags($string);
+	if(strlen($string) <= $limit) return $string;
+	if(false !== ($breakpoint = strpos($string, $break, $limit)))
+	{
+		if($breakpoint < strlen($string) - 1)
+		{
+			$string = substr($string, 0, $breakpoint) . $pad;
+		}
+	}
+	return $string;
+}
+
+/**
  * Allow SVG file upload in Wordpress Admin area
  */
 function cc_mime_types( $mimes ){
@@ -38,8 +56,32 @@ add_filter( 'upload_mimes', 'cc_mime_types' );
 function custom_image_sizes() {
     add_theme_support('post-thumbnails');
 	add_image_size('logo', 206, 90, TRUE);
+	add_image_size('home-latest', 467, 9999, TRUE);
+	add_image_size('news', 300, 152, TRUE);
 }
 add_action('after_setup_theme', 'custom_image_sizes');
+
+/**
+ * Add custom brand colours to colour picker in editor
+ */
+function my_mce4_options( $init ) {
+$default_colours = '
+    "000000", "Black",        "993300", "Burnt orange", "333300", "Dark olive",   "003300", "Dark green",   "003366", "Dark azure",   "000080", "Navy Blue",      "333399", "Indigo",       "333333", "Very dark gray", 
+    "800000", "Maroon",       "FF6600", "Orange",       "808000", "Olive",        "008000", "Green",        "008080", "Teal",         "0000FF", "Blue",           "666699", "Grayish blue", "808080", "Gray", 
+    "FF0000", "Red",          "FF9900", "Amber",        "99CC00", "Yellow green", "339966", "Sea green",    "33CCCC", "Turquoise",    "3366FF", "Royal blue",     "800080", "Purple",       "999999", "Medium gray", 
+    "FF00FF", "Magenta",      "FFCC00", "Gold",         "FFFF00", "Yellow",       "00FF00", "Lime",         "00FFFF", "Aqua",         "00CCFF", "Sky blue",       "993366", "Brown",        "C0C0C0", "Silver", 
+    "FF99CC", "Pink",         "FFCC99", "Peach",        "FFFF99", "Light yellow", "CCFFCC", "Pale green",   "CCFFFF", "Pale cyan",    "99CCFF", "Light sky blue", "CC99FF", "Plum",         "FFFFFF", "White"
+';
+$custom_colours = '
+    "4f2d5b", "Brand Purple",
+	"f9a435", "Brand Orange",
+	"3b3b3b", "Brand Text Colour"
+';
+$init['textcolor_map'] = '['.$default_colours.','.$custom_colours.']'; // build colour grid default+custom colors
+$init['textcolor_rows'] = 6; // enable 6th row for custom colours in grid
+return $init;
+}
+add_filter('tiny_mce_before_init', 'my_mce4_options');
 
 /**
  * Add separator for menu items

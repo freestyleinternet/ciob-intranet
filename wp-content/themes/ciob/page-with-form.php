@@ -1,4 +1,8 @@
-<?php get_header(); ?>
+<?php 
+/*
+Template Name: Page with form
+*/
+get_header(); ?>
 
     <section id="main" role="main">
     	<div class="container">
@@ -27,8 +31,9 @@
                 </ul>
 			</aside>
            <section class="main-content" role="main">
-           	<h1><?php the_title(); ?></h1>
+  
             	<?php the_content(); ?>
+              
               <?php if( have_rows('add_download') ): ?>
               <ul class="downloads">
               		<?php while(the_repeater_field('add_download')): ?>

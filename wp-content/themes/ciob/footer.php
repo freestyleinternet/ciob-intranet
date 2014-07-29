@@ -1,8 +1,5 @@
 		<footer>
         	<div class="wrapper">
-            	<div class="col">
-                	<p>&copy; CIOB <?php echo date( "Y" ); ?></p>
-              </div>
               <div class="col">
                 <?php if( have_rows('footer_link_box_1',5) ): ?>
                   <ul>
@@ -20,6 +17,9 @@
                       <?php  endwhile;  ?>
                   </ul>
 					<?php endif; ?>
+              </div>
+              <div class="col editor">
+              	<?php the_field('footer_editor'); ?>
               </div>
            </div> 
 		</footer>

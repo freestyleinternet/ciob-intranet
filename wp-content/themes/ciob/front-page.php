@@ -1,13 +1,13 @@
-f<?php get_header(); ?>
+<?php get_header(); ?>
 
 	<section id="main" role="main">
 		<div class="container">
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
           <div class="wrapper"> 
               <div class="col-one">
-              		<h2>LATEST</h2>
-              		<img src="<?php echo get_bloginfo('template_directory'); ?>/assets/images/video-default.jpg" width="467" height="264" alt=""/>
-              		
+              	<h2>LATEST</h2>
+              	<!--<img src="<?php echo get_bloginfo('template_directory'); ?>/assets/images/video-default.jpg" width="467" height="264" alt=""/>-->
+            	<?php the_content(); ?>
             </div>
               
               <div class="col-two">
@@ -28,24 +28,33 @@ f<?php get_header(); ?>
               			<a href="<?php the_field('box_three_link_to_page'); ?>"><?php the_field('box_three_link_to_page_link_text'); ?></a>
               		<?php endif; ?>	
               </div>
-              
+             
+             
             <div class="cycle-slideshow" 
                 data-cycle-fx=scrollHorz
                 data-cycle-swipe=true
                 data-cycle-slides="div.slide"
                 data-cycle-prev="#prev"
                 data-cycle-next="#next">
-                <div class="cycle-pager"></div>   
-					  <?php if( have_rows('add_slide') ): ?>
-                    	<?php while(the_repeater_field('add_slide')): ?>
-                    		<div class="slide">
-                    			<h1><?php the_sub_field('slide_title'); ?></h1>
-                    			<?php the_sub_field('slide_content'); ?>
-                    			<a class="yellowimg arrow thinner" href="<?php the_sub_field('slide_read_more_link'); ?>">Read More...</a>
-                    		</div>
-                    	<?php  endwhile;  ?>
-                    <?php endif; ?>
+                <div class="cycle-pager"></div>
+				<?php
+                $my_query = new WP_Query( "post_type=post" );
+                if ( $my_query->have_posts() ) { 
+                    while ( $my_query->have_posts() ) { 
+                        $my_query->the_post();
+                ?>
+                  <div class="slide">
+                      <h1><?php the_title(); ?></h1>
+                      <p><?php echo truncate($post->post_content, 80); ?></p>
+                      <a class="yellowimg arrow thinner" href="<?php bloginfo('url'); ?>/news/">Read More...</a>
+                  </div>
+                  <?php
+                     }
+                 }
+                 wp_reset_postdata();
+                 ?>
             	</div>
+                
 				<div class="full-width">    
                   <div class="col-one leftalign noborder">
                   	<h1><?php the_field('the_logo_box_title'); ?></h1>
@@ -58,7 +67,7 @@ f<?php get_header(); ?>
                   	<?php endif; ?>
                   </div> 
                   <div class="col-three noborder">
-                  	<?php the_content(); ?>
+                  	<?php the_field('service_desk_block'); ?>
                   </div>
   				</div>             
               <div class="social-feeds">
@@ -108,18 +117,17 @@ f<?php get_header(); ?>
                 </div>
                 <div class="col4 last">
                   <h4><img src="<?php echo get_bloginfo('template_directory'); ?>/assets/images/icons/youtube.png" width="17" height="17" alt=""/>YOUTUBE</h4>
-                  <img src="<?php echo get_bloginfo('template_directory'); ?>/assets/images/ciob-youtube.jpg" width="209" height="124" alt=""/> 
-                	<h4 class="second"><img src="<?php echo get_bloginfo('template_directory'); ?>/assets/images/icons/flickr-icon.png" width="27" height="27" alt=""/>FLICKR</h4>
-                	<div id="latest-flickr-images"></div>
+                  <?php dynamic_sidebar( 'footer-youtube' ); ?>
+                	<!--<h4 class="second"><img src="<?php echo get_bloginfo('template_directory'); ?>/assets/images/icons/flickr-icon.png" width="27" height="27" alt=""/>FLICKR</h4>
+                	<div id="latest-flickr-images"></div>-->
                 </div>	
               </div>  
-            
+            <?php endwhile; endif; ?>
       </div>
 		
-		<?php endwhile; endif; ?>
+		
 		</div>
 	</section> <!-- /#main -->
 
-<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>

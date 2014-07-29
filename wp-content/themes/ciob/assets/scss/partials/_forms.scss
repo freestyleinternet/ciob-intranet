@@ -12,6 +12,12 @@ button {
 	border:1px solid #fff;
 }
 input {
+	outline:none;
+}
+body .gform_wrapper .gform_body .gform_fields .gfield .gfield_radio li {
+	font-size:12px;
+}
+#searchform input {
 	float:right;
 	padding:0 em(8);
 	min-width:220px;
@@ -23,6 +29,9 @@ input {
 	@include placeholder {
 		color:#000;
 	}
+}
+body .gform_wrapper .gform_body .gform_fields .gfield input[type=text]:focus {
+	outline:0;
 }
 .styled-select {
   float:right;
